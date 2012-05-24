@@ -39,6 +39,9 @@ namespace Tester
 
         }
 
-     
+        private void btnDataView_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
