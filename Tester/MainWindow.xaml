@@ -1,0 +1,11 @@
+﻿<Window x:Class="Tester.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ItshoMultiVisualizer Tester" Height="214" Width="176">
+    <StackPanel>
+        <Button Name="btnDataSet" Margin="5" Click="btnDataSet_Click" Content="DataSet" />
+        <Button Name="btnDataTable" Margin="5" Click="btnDataTable_Click" Content="DataTable" />
+        <Button Name="btnDataRow" Margin="5" Click="btnDataRow_Click" Content="DataRow" />
+        <Button Name="btnDataRow" Margin="5" Click="btnDataRow_Click" Content="DataRow" />
+    </StackPanel>
+</Window>

@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItshoMultiVisualizer", "ItshoMultiVisualizer\ItshoMultiVisualizer.csproj", "{4F0A6C3C-2D9C-42CA-877D-7C6139A8AC8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{051F4C14-7F02-4623-ACD9-5FBAD9ECAFA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{4F0A6C3C-2D9C-42CA-877D-7C6139A8AC8B}.Debug|x86.Build.0 = Debug|x86
 		{4F0A6C3C-2D9C-42CA-877D-7C6139A8AC8B}.Release|x86.ActiveCfg = Release|x86
 		{4F0A6C3C-2D9C-42CA-877D-7C6139A8AC8B}.Release|x86.Build.0 = Release|x86
+		{051F4C14-7F02-4623-ACD9-5FBAD9ECAFA1}.Debug|x86.ActiveCfg = Debug|x86
+		{051F4C14-7F02-4623-ACD9-5FBAD9ECAFA1}.Debug|x86.Build.0 = Debug|x86
+		{051F4C14-7F02-4623-ACD9-5FBAD9ECAFA1}.Release|x86.ActiveCfg = Release|x86
+		{051F4C14-7F02-4623-ACD9-5FBAD9ECAFA1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

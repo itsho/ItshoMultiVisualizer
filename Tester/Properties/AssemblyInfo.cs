@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ItshoMultiVisualizer")]
+[assembly: AssemblyTitle("Tester")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Itsho")]
-[assembly: AssemblyProduct("ItshoMultiVisualizer")]
-[assembly: AssemblyCopyright("Copyright © Itsho 2012")]
+[assembly: AssemblyCompany("Microsoft")]
+[assembly: AssemblyProduct("Tester")]
+[assembly: AssemblyCopyright("Copyright © Microsoft 2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
