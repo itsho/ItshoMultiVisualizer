@@ -40,6 +40,7 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,22 +56,19 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Compile Include="UiHelper.cs" />
+    <Compile Include="VisualizerInfra\DataConverter.cs" />
+    <Compile Include="VisualizerInfra\VisualizerForm.xaml.cs">
+      <DependentUpon>VisualizerForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizerInfra\BaseTable.cs" />
+    <Compile Include="VisualizerInfra\VisualizerBaseTable.cs" />
+    <Compile Include="Visualizers\DataTable\DataTableDebuggerVisualizer.cs" />
+    <Compile Include="Visualizers\DataTable\DataTableObjectSource.cs" />
+    <Page Include="VisualizerInfra\VisualizerForm.xaml">
       <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -96,6 +94,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Visualizers\DataRow\" />
+    <Folder Include="Visualizers\DataSet\" />
+    <Folder Include="Visualizers\DataView\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

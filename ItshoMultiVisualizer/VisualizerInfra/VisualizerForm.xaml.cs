@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows;
@@ -9,19 +10,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ItshoMultiVisualizer.VisualizerInfra;
 
 namespace ItshoMultiVisualizer
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Visualizer Form
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class VisualizerForm : Window
     {
-        public MainWindow()
+        #region Ctor
+
+        public VisualizerForm()
         {
             InitializeComponent();
         }
+
+        public VisualizerForm(VisualizerBaseTable p_objBaseTableToVisualize)
+        {
+            
+        }
+
+        #endregion
     }
 }
