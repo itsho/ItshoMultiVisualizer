@@ -29,7 +29,7 @@ namespace ItshoMultiVisualizer
 
         public VisualizerForm(VisualizerBaseTable p_objBaseTableToVisualize)
         {
-            
+            dgvVisualizer.DataContext = p_objBaseTableToVisualize.Table;
         }
 
         #endregion

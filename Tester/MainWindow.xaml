@@ -3,9 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ItshoMultiVisualizer Tester" Height="214" Width="176">
     <StackPanel>
-        <Button Name="btnDataSet" Margin="5" Click="btnDataSet_Click" Content="DataSet" />
-        <Button Name="btnDataTable" Margin="5" Click="btnDataTable_Click" Content="DataTable" />
-        <Button Name="btnDataView" Margin="5" Click="btnDataView_Click"  Content="DataView" />
-        <Button Name="btnDataRow" Margin="5" Click="btnDataRow_Click" Content="DataRow" />
+        <Button Name="btnDataSet" Margin="5" Click="btnDataSet_Click" Content="DataSet" IsEnabled="False" />
+        <Button Name="btnDataTable" Margin="5" Click="btnDataTable_Click" Content="DataTable" IsEnabled="True" />
+        <Button Name="btnDataView" Margin="5" Click="btnDataView_Click"  Content="DataView" IsEnabled="False" />
+        <Button Name="btnDataRow" Margin="5" Click="btnDataRow_Click" Content="DataRow" IsEnabled="False" />
     </StackPanel>
 </Window>
