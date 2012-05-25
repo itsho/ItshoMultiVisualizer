@@ -59,10 +59,12 @@ namespace ItshoMultiVisualizer
 
         private void SetDataToDataGrid(VisualizerBaseTable p_objBaseTableToVisualize)
         {
+            // Clear dummy columns from Visual Studio Designer
+            dgvVisualizer.Columns.Clear();
+
             // Set source of data
             dgvVisualizer.ItemsSource = p_objBaseTableToVisualize.Table;
 
-            // TODO: disallow user to change row height
             // TODO: allow user to hide and show columns using another form that will be called VisualizerColumnsManager
 
             // foreach column
@@ -84,6 +86,33 @@ namespace ItshoMultiVisualizer
             Close();
         }
         
+
+        private void SetColumnsWidth(DataGridLength p_gridLengthNewValue)
+        {
+            dgvVisualizer.ColumnWidth = p_gridLengthNewValue;
+        }
+
+        private void dgvVisualizer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void btnFitToCells_Click(object sender, RoutedEventArgs e)
+        {
+            SetColumnsWidth(DataGridLength.SizeToCells);
+        }
+
+        private void btnFitToHeaders_Click(object sender, RoutedEventArgs e)
+        {
+            SetColumnsWidth(DataGridLength.SizeToHeader);
+        }
+
+        private void btnFitToAuto_Click(object sender, RoutedEventArgs e)
+        {
+            SetColumnsWidth(DataGridLength.Auto);
+        }
+
         #endregion
+
     }
 }
