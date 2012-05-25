@@ -3,3 +3,4 @@
 * Project started
 * Target are - Sysytem.Data.DataTable,  Sysytem.Data.DataRow,  Sysytem.Data.DataSet
 * WPF prefered over WinForms
+* Icon taken from http://findicons.com/icon/64886/wizard#

@@ -16,7 +16,7 @@
                 <MenuItem Header="ColumnWidth" >
                     <MenuItem Name="btnFitToCells" Header="Fit to cells" Click="btnFitToCells_Click" />
                     <MenuItem Name="btnFitToHeaders" Header="Fit to Headers" Click="btnFitToHeaders_Click" />
-                    <MenuItem Name="btnFitToAuto" Header="Auto select" Click="btnFitToAuto_Click" />
+                    <MenuItem Name="btnFitToWindow" Header="Fit all-columns to Window" Click="btnFitToWindow_Click" />
                 </MenuItem>
             </MenuItem>
             

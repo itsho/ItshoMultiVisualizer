@@ -86,7 +86,6 @@ namespace ItshoMultiVisualizer
         {
             Close();
         }
-        
 
         private void SetColumnsWidth(DataGridLength p_gridLengthNewValue)
         {
@@ -94,12 +93,6 @@ namespace ItshoMultiVisualizer
             {
                 objCol.Width = p_gridLengthNewValue;
             }
-            dgvVisualizer.ColumnWidth = p_gridLengthNewValue;
-        }
-
-        private void dgvVisualizer_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void btnFitToCells_Click(object sender, RoutedEventArgs e)
@@ -112,9 +105,14 @@ namespace ItshoMultiVisualizer
             SetColumnsWidth(DataGridLength.SizeToHeader);
         }
 
-        private void btnFitToAuto_Click(object sender, RoutedEventArgs e)
+        private void btnFitToWindow_Click(object sender, RoutedEventArgs e)
         {
-            SetColumnsWidth(DataGridLength.Auto);
+            SetColumnsWidth(new DataGridLength(1,DataGridLengthUnitType.Star));
+        }
+
+        private void dgvVisualizer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
 
         #endregion
