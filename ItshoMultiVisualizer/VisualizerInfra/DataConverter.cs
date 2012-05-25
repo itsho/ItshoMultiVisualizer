@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace ItshoMultiVisualizer.VisualizerInfra
 {
     internal class DataConverter
     {
+
+        private const string SINGLE_ROW_TEMPLATE_KEY = "SingleRowTemplate";
+
         #region Private methods
 
         private static object[][] DataTableToMatrix(DataTable p_dtDataTable)
@@ -152,6 +158,33 @@ namespace ItshoMultiVisualizer.VisualizerInfra
                                          p_dtDataTableToVisualize.TableName);
 
             return objTableToVisualize;
+        }
+
+        public static DataTemplate GenerateRowTemplate(object[] p_arrCellsInRow)
+        {
+            DataTemplate singleRowTemplate = new DataTemplate();
+            {
+                WrapPanel wrapPanel = new WrapPanel();
+
+                //for each cell
+                for (int intCurrCell = 0; intCurrCell < p_arrCellsInRow.Length; intCurrCell++)
+                {
+                    object objCell = p_arrCellsInRow[intCurrCell];
+                    Label textBlockSingleCell = new Label();
+
+                    if (objCell != null)
+                    {
+                        textBlockSingleCell.Content = new Binding("index[" + intCurrCell + "]");
+                    }
+                    // Add cell to wrap panel
+                    wrapPanel.Children.Add(textBlockSingleCell);
+                }
+
+                // Add wrapPanel to DataTemplate
+                singleRowTemplate.Resources.Add(SINGLE_ROW_TEMPLATE_KEY, wrapPanel);
+            }
+
+            return singleRowTemplate;
         }
 
         #endregion

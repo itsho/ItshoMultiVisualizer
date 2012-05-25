@@ -27,11 +27,22 @@ namespace ItshoMultiVisualizer
             InitializeComponent();
         }
 
-        public VisualizerForm(VisualizerBaseTable p_objBaseTableToVisualize)
+        public VisualizerForm(VisualizerBaseTable p_objBaseTableToVisualize) : this()
         {
-            dgvVisualizer.DataContext = p_objBaseTableToVisualize.Table;
+            if (p_objBaseTableToVisualize.Table.Length > 0)
+            {
+                DataTemplate objTemplate = DataConverter.GenerateRowTemplate(p_objBaseTableToVisualize.Table[0]);
+
+                dgvVisualizer.ItemsSource = p_objBaseTableToVisualize.Table;
+                dgvVisualizer.ItemTemplate = objTemplate;
+            }
         }
 
         #endregion
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
