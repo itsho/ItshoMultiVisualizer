@@ -174,7 +174,7 @@ namespace ItshoMultiVisualizer.VisualizerInfra
 
                     if (objCell != null)
                     {
-                        textBlockSingleCell.Content = new Binding("index[" + intCurrCell + "]");
+                        textBlockSingleCell.Content = new Binding("[" + intCurrCell + "]");
                     }
                     // Add cell to wrap panel
                     wrapPanel.Children.Add(textBlockSingleCell);

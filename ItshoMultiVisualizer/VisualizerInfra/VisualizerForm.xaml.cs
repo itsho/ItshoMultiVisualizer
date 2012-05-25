@@ -29,12 +29,27 @@ namespace ItshoMultiVisualizer
 
         public VisualizerForm(VisualizerBaseTable p_objBaseTableToVisualize) : this()
         {
-            if (p_objBaseTableToVisualize.Table.Length > 0)
+            // If no data sent
+            if (p_objBaseTableToVisualize.Table.Length == 0)
             {
-                DataTemplate objTemplate = DataConverter.GenerateRowTemplate(p_objBaseTableToVisualize.Table[0]);
+                return;
+            }
 
-                dgvVisualizer.ItemsSource = p_objBaseTableToVisualize.Table;
-                dgvVisualizer.ItemTemplate = objTemplate;
+
+            DataTemplate objTemplate = DataConverter.GenerateRowTemplate(p_objBaseTableToVisualize.Table[0]);
+
+            dgvVisualizer.ItemsSource = p_objBaseTableToVisualize.Table;
+            dgvVisualizer.ItemTemplate = objTemplate;
+
+            // If only one table sent
+            if (p_objBaseTableToVisualize.Table.Length == 1)
+            {
+                lstTablesNames.Visibility = Visibility.Collapsed;
+            }
+            // If more than one table sent
+            else
+            {
+                lstTablesNames.Visibility = Visibility.Visible;
             }
         }
 
