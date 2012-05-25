@@ -23,7 +23,16 @@
             </Expander>
             
             <!-- The mighty grid -->
-            <DataGrid Name="dgvVisualizer" CanUserResizeRows="False" AutoGenerateColumns="False" />
+            <DataGrid Name="dgvVisualizer" CanUserResizeRows="False" AutoGenerateColumns="False" ColumnWidth="*" />
+
+            <!--Status bar with info about selected table-->
+            <StatusBar VerticalAlignment="Bottom">
+                <Label Name="lblRowsCounter"></Label>
+                <Separator />
+                <Label Name="lblTotalRows"></Label>
+            </StatusBar>
         </DockPanel>
+        
+        
     </DockPanel>
 </Window>
