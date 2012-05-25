@@ -1,0 +1,2 @@
+﻿TODO List:
+* allow user to hide and show columns using another form that will be called VisualizerColumnsManager
