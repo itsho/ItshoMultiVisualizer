@@ -1,16 +1,8 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using ItshoMultiVisualizer.VisualizerInfra;
 
 namespace ItshoMultiVisualizer
@@ -35,29 +27,63 @@ namespace ItshoMultiVisualizer
                 return;
             }
 
+            SetDataToDataGrid(p_objBaseTableToVisualize);
 
-            DataTemplate objTemplate = DataConverter.GenerateRowTemplate(p_objBaseTableToVisualize.Table[0]);
+            // Since only one table sent
+            objExpander.Visibility = Visibility.Collapsed;
+        }
 
-            dgvVisualizer.ItemsSource = p_objBaseTableToVisualize.Table;
-            dgvVisualizer.ItemTemplate = objTemplate;
-
-            // If only one table sent
-            if (p_objBaseTableToVisualize.Table.Length == 1)
+        public VisualizerForm(IList<VisualizerBaseTable> p_lstTables) : this()
+        {
+            // If no data sent
+            if (p_lstTables.Count == 0)
             {
-                lstTablesNames.Visibility = Visibility.Collapsed;
+                return;
             }
-            // If more than one table sent
-            else
-            {
-                lstTablesNames.Visibility = Visibility.Visible;
-            }
+
+            SetDataToDataGrid(p_lstTables[0]);
+
+            // Since more than one table sent
+            objExpander.Visibility = Visibility.Visible;
+
+            // We use the list of table names
+            lstTablesNames.ItemsSource = p_lstTables;
+
+            // Display table names
+            lstTablesNames.DisplayMemberPath = "TableName";
         }
 
         #endregion
 
+        #region Private methods
+
+        private void SetDataToDataGrid(VisualizerBaseTable p_objBaseTableToVisualize)
+        {
+            // Set source of data
+            dgvVisualizer.ItemsSource = p_objBaseTableToVisualize.Table;
+
+            // TODO: disallow user to change row height
+            // TODO: allow user to hide and show columns using another form that will be called VisualizerColumnsManager
+
+            // foreach column
+            foreach (string strColumnName in p_objBaseTableToVisualize.MyColumns.Keys)
+            {
+                // We add a column to the DataGrid
+                dgvVisualizer.Columns.Add(new DataGridTextColumn()
+                                              {
+                                                  // Title of Column
+                                                  Header = strColumnName,
+                                                  // Data in column is taken with binding from the row in cell number X
+                                                  Binding = new Binding("[" + dgvVisualizer.Columns.Count + "]")
+                                              });
+            }
+        }
+
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            Close();
         }
+        
+        #endregion
     }
 }

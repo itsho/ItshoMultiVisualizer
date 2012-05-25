@@ -160,6 +160,7 @@ namespace ItshoMultiVisualizer.VisualizerInfra
             return objTableToVisualize;
         }
 
+        [Obsolete("Generate Columns with foreach instead",true)]
         public static DataTemplate GenerateRowTemplate(object[] p_arrCellsInRow)
         {
             DataTemplate singleRowTemplate = new DataTemplate();
