@@ -1,1 +1,5 @@
-﻿
+﻿Version 0.1
+-------------
+* Project started
+* Target are - Sysytem.Data.DataTable,  Sysytem.Data.DataRow,  Sysytem.Data.DataSet
+* WPF prefered over WinForms
