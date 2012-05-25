@@ -14,9 +14,9 @@
 
             <MenuItem Header="Display">
                 <MenuItem Header="ColumnWidth" >
-                    <MenuItem Name="btnFitToCells" Header="Fit to cells" Click="" />
-                    <MenuItem Name="btnFitToHeaders" Header="Fit to Headers" Click="" />
-                    <MenuItem Name="btnFitToAuto" Header="Auto select" Click="" />
+                    <MenuItem Name="btnFitToCells" Header="Fit to cells" Click="btnFitToCells_Click" />
+                    <MenuItem Name="btnFitToHeaders" Header="Fit to Headers" Click="btnFitToHeaders_Click" />
+                    <MenuItem Name="btnFitToAuto" Header="Auto select" Click="btnFitToAuto_Click" />
                 </MenuItem>
             </MenuItem>
             

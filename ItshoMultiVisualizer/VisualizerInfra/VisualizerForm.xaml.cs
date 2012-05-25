@@ -65,8 +65,6 @@ namespace ItshoMultiVisualizer
             // Set source of data
             dgvVisualizer.ItemsSource = p_objBaseTableToVisualize.Table;
 
-            // TODO: allow user to hide and show columns using another form that will be called VisualizerColumnsManager
-
             // foreach column
             foreach (string strColumnName in p_objBaseTableToVisualize.MyColumns.Keys)
             {
@@ -79,6 +77,9 @@ namespace ItshoMultiVisualizer
                                                   Binding = new Binding("[" + dgvVisualizer.Columns.Count + "]")
                                               });
             }
+
+            // Display status:
+            lblRowsCounter.Content = "Total rows: " + p_objBaseTableToVisualize.Table.Length;
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
@@ -89,6 +90,10 @@ namespace ItshoMultiVisualizer
 
         private void SetColumnsWidth(DataGridLength p_gridLengthNewValue)
         {
+            foreach (var objCol in dgvVisualizer.Columns)
+            {
+                objCol.Width = p_gridLengthNewValue;
+            }
             dgvVisualizer.ColumnWidth = p_gridLengthNewValue;
         }
 
