@@ -100,7 +100,18 @@
     <Folder Include="Visualizers\DataSet\" />
     <Folder Include="Visualizers\DataView\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Info\Todo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Info\Changes.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>@echo off
+echo "copy DllS to local visualizer folder"
+copy "*.dll"                  "%25USERPROFILE%25\Documents\Visual Studio 2010\Visualizers" /y</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
