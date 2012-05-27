@@ -17,6 +17,7 @@ namespace ItshoMultiVisualizer
         public VisualizerForm()
         {
             InitializeComponent();
+            btnRightToLeft.IsChecked = UiHelper.IsCurrentlanguageRTL();
         }
 
         public VisualizerForm(VisualizerBaseTable p_objBaseTableToVisualize) : this()
@@ -108,6 +109,18 @@ namespace ItshoMultiVisualizer
         private void btnFitToWindow_Click(object sender, RoutedEventArgs e)
         {
             SetColumnsWidth(new DataGridLength(1,DataGridLengthUnitType.Star));
+        }
+
+        private void btnRightToLeft_CheckChanged(object sender, RoutedEventArgs e)
+        {
+            if (btnRightToLeft.IsChecked)
+            {
+                FlowDirection = FlowDirection.RightToLeft;
+            }
+            else
+            {
+                FlowDirection = FlowDirection.LeftToRight;
+            }
         }
 
         private void dgvVisualizer_SelectionChanged(object sender, SelectionChangedEventArgs e)

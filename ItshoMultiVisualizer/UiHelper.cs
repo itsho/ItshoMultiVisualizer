@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Windows;
 
 namespace ItshoMultiVisualizer
@@ -28,6 +29,16 @@ namespace ItshoMultiVisualizer
                             MessageBoxButton.OK,
                             MessageBoxImage.Error,
                             MessageBoxResult.OK);
+        }
+
+        /// <summary>
+        /// Is currenct langauge used is Right-To-Left
+        /// http://blogs.msdn.com/b/vsarabic/archive/2010/04/19/detecting-if-your-locale-culture-is-righttoleft.aspx
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsCurrentlanguageRTL()
+        {
+            return CultureInfo.CurrentUICulture.TextInfo.IsRightToLeft;
         }
     }
 }
